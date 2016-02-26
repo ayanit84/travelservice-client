@@ -1,15 +1,32 @@
 package com.infosys.hackathon.services.directory;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EmployeeOfficeAddress {
+
 	private int officeId;
 	private String addressLine;
 	private String city;
 	private String state;
 	private String country;
+
+	@JsonProperty("zip")
 	private int pincode;
 
 	public EmployeeOfficeAddress() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public EmployeeOfficeAddress(int officeId, String addressLine, String city,
+			String state, String country, int pincode) {
+		this.officeId = officeId;
+		this.addressLine = addressLine;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		this.pincode = pincode;
 	}
 
 	public int getOfficeId() {
@@ -58,6 +75,12 @@ public class EmployeeOfficeAddress {
 
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeOfficeAddress [officeId=" + officeId + ", city=" + city
+				+ ", country=" + country + "]";
 	}
 
 }

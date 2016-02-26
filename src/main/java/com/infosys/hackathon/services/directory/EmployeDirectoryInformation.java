@@ -1,16 +1,27 @@
 package com.infosys.hackathon.services.directory;
 
+import java.util.Map;
+
 public class EmployeDirectoryInformation {
 	private int empNo;
 	private String firstName;
 	private String lastName;
-	private String mobileNo;
-	private String officePhoneNo;
-	private String homePhoneNo;
-	private String emailAddress;
+	private Map<String, String> phones;
+	private Map<String, String> emails;
 	private String unit;
 	private String designation;
 	private int officeId;
+
+	enum PhoneNumberType {
+		Home, Mobile, Office
+	}
+
+	enum EmailType {
+		Main, Client
+	}
+
+	public EmployeDirectoryInformation() {
+	}
 
 	public int getEmpNo() {
 		return empNo;
@@ -24,54 +35,32 @@ public class EmployeDirectoryInformation {
 		return firstName;
 	}
 
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 
 	public String getLastName() {
 		return lastName;
 	}
 
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-
-	public String getMobileNo() {
-		return mobileNo;
+	public Map<String, String> getPhones() {
+		return phones;
 	}
 
-
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
+	public void setPhones(Map<String, String> phones) {
+		this.phones = phones;
 	}
 
-	public String getOfficePhoneNo() {
-		return officePhoneNo;
+	public Map<String, String> getEmails() {
+		return emails;
 	}
 
-	public void setOfficePhoneNo(String officePhoneNo) {
-		this.officePhoneNo = officePhoneNo;
-	}
-
-	public String getHomePhoneNo() {
-		return homePhoneNo;
-	}
-
-	public void setHomePhoneNo(String homePhoneNo) {
-		this.homePhoneNo = homePhoneNo;
-	}
-
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-
-
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+	public void setEmails(Map<String, String> emails) {
+		this.emails = emails;
 	}
 
 	public String getUnit() {
@@ -98,10 +87,12 @@ public class EmployeDirectoryInformation {
 		this.officeId = officeId;
 	}
 
-	@Override
-	public String toString() {
-		return "EmployeDirectoryInfo [mobileNo=" + mobileNo + ", emailAddress="
-			+ emailAddress + "]";
+	public String getPhoneNumber(PhoneNumberType type) {
+		return this.phones.get(type);
+	}
+
+	public String getEmail(EmailType type) {
+		return this.emails.get(type);
 	}
 
 }
