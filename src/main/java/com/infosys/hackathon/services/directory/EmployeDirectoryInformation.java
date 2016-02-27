@@ -2,7 +2,9 @@ package com.infosys.hackathon.services.directory;
 
 import java.util.Map;
 
-public class EmployeDirectoryInformation {
+import com.infosys.hackathon.services.JsonData;
+
+public class EmployeDirectoryInformation implements JsonData {
 	private int empNo;
 	private String firstName;
 	private String lastName;

@@ -2,9 +2,10 @@ package com.infosys.hackathon.services.directory;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.infosys.hackathon.services.JsonData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EmployeeOfficeAddress {
+public class EmployeeOfficeAddress implements JsonData {
 
 	private int officeId;
 	private String addressLine;
