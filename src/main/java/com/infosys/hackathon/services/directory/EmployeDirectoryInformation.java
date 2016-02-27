@@ -2,13 +2,19 @@ package com.infosys.hackathon.services.directory;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.infosys.hackathon.services.JsonData;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EmployeDirectoryInformation implements JsonData {
+
 	private int empNo;
 	private String firstName;
 	private String lastName;
+	@JsonProperty("phones")
 	private Map<String, String> phones;
+	@JsonProperty("emails")
 	private Map<String, String> emails;
 	private String unit;
 	private String designation;
@@ -97,4 +103,9 @@ public class EmployeDirectoryInformation implements JsonData {
 		return this.emails.get(type);
 	}
 
+	@Override
+	public String toString() {
+		return "EmployeDirectoryInformation [empNo=" + empNo + ", emails="
+			+ emails + ", officeId=" + officeId + "]";
+	}
 }
