@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.infosys.hackathon.services.JsonData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EmployeDirectoryInformation implements JsonData {
+public class EmployeeDirectoryInformation implements JsonData {
 
 	private int empNo;
 	private String firstName;
@@ -28,7 +28,7 @@ public class EmployeDirectoryInformation implements JsonData {
 		Main, Client
 	}
 
-	public EmployeDirectoryInformation() {
+	public EmployeeDirectoryInformation() {
 	}
 
 	public int getEmpNo() {

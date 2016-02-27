@@ -3,19 +3,19 @@ package com.infosys.hackathon.services.directory.dto;
 import java.util.List;
 
 import com.infosys.hackathon.services.ServiceResponse;
-import com.infosys.hackathon.services.directory.EmployeDirectoryInformation;
+import com.infosys.hackathon.services.directory.EmployeeDirectoryInformation;
 
 public class SearchResponse extends ServiceResponse {
-	private List<EmployeDirectoryInformation> employees;
+	private List<EmployeeDirectoryInformation> employees;
 
 	public SearchResponse() {
 	}
 
-	public List<EmployeDirectoryInformation> getEmployees() {
+	public List<EmployeeDirectoryInformation> getEmployees() {
 		return employees;
 	}
 
-	public void setEmployees(List<EmployeDirectoryInformation> employees) {
+	public void setEmployees(List<EmployeeDirectoryInformation> employees) {
 		this.employees = employees;
 	}
 }
