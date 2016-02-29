@@ -51,13 +51,13 @@ public class SearchRequest {
 
 	public Map<String, Object> getMap() {
 		Map<String, Object> params = new HashMap<String, Object>();
-		if (StringUtils.isEmpty(this.country)) {
+		if (!StringUtils.isEmpty(this.country)) {
 			params.put(SearchParameter.Country.getKey(), getCountry());
 		}
-		if (StringUtils.isEmpty(this.state)) {
+		if (!StringUtils.isEmpty(this.state)) {
 			params.put(SearchParameter.State.getKey(), getState());
 		}
-		if (StringUtils.isEmpty(this.city)) {
+		if (!StringUtils.isEmpty(this.city)) {
 			params.put(SearchParameter.City.getKey(), getCity());
 		}
 		return params;

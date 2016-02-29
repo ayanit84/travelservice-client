@@ -7,7 +7,7 @@ import com.infosys.hackathon.services.JsonData;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmployeeOfficeAddress implements JsonData {
 
-	private int officeId;
+	private Integer officeId;
 	private String addressLine;
 	private String city;
 	private String state;
@@ -17,7 +17,6 @@ public class EmployeeOfficeAddress implements JsonData {
 	private int pincode;
 
 	public EmployeeOfficeAddress() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public EmployeeOfficeAddress(int officeId, String addressLine, String city,
