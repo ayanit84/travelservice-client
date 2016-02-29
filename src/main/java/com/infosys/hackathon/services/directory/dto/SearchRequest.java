@@ -1,5 +1,10 @@
 package com.infosys.hackathon.services.directory.dto;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+
 public class SearchRequest {
 	private String country;
 	private String state;
@@ -41,7 +46,22 @@ public class SearchRequest {
 	@Override
 	public String toString() {
 		return "SearchRequest [country=" + country + ", state=" + state
-			+ ", city=" + city + "]";
+				+ ", city=" + city + "]";
+	}
+
+	public Map<String, Object> getMap() {
+		Map<String, Object> params = new HashMap<String, Object>();
+		if (StringUtils.isEmpty(this.country)) {
+			params.put(SearchParameter.Country.getKey(), getCountry());
+		}
+		if (StringUtils.isEmpty(this.state)) {
+			params.put(SearchParameter.State.getKey(), getState());
+		}
+		if (StringUtils.isEmpty(this.city)) {
+			params.put(SearchParameter.City.getKey(), getCity());
+		}
+		return params;
+
 	}
 
 }

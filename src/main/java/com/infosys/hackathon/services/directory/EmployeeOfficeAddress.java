@@ -81,7 +81,7 @@ public class EmployeeOfficeAddress implements JsonData {
 	@Override
 	public String toString() {
 		return "EmployeeOfficeAddress [officeId=" + officeId + ", city=" + city
-				+ ", country=" + country + "]";
+				+ ", state=" + state + ", country=" + country + "]";
 	}
 
 }
