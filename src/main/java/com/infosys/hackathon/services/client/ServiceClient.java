@@ -4,7 +4,7 @@ import com.infosys.hackathon.services.ServiceRequest;
 import com.infosys.hackathon.services.ServiceResponse;
 
 public interface ServiceClient<T extends ServiceRequest, V extends ServiceResponse> {
-	public String getServiceUrl();
+	public String getServiceName();
 
 	public V getRequest(Class<V> responseType);
 
