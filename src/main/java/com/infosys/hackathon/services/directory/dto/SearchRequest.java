@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class SearchRequest {
+import com.infosys.hackathon.services.ServiceRequest;
+
+public class SearchRequest implements ServiceRequest {
 	private String country;
 	private String state;
 	private String city;
