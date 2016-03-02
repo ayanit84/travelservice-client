@@ -19,6 +19,7 @@ public class EmployeeDirectoryInformation implements JsonData {
 	private String unit;
 	private String designation;
 	private int officeId;
+	private String jobLevel;
 
 	enum PhoneNumberType {
 		Home, Mobile, Office
@@ -103,9 +104,23 @@ public class EmployeeDirectoryInformation implements JsonData {
 		return this.emails.get(type);
 	}
 
+	public String getJobLevel() {
+		return jobLevel;
+	}
+
+	public void setJobLevel(String jobLevel) {
+		this.jobLevel = jobLevel;
+	}
+
 	@Override
 	public String toString() {
-		return "EmployeDirectoryInformation [empNo=" + empNo + ", emails="
-			+ emails + ", officeId=" + officeId + "]";
+		return "EmployeeDirectoryInformation [empNo=" + empNo + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", phones=" + phones
+				+ ", emails=" + emails + ", unit=" + unit + ", designation="
+				+ designation + ", officeId=" + officeId + ", jobLevel="
+				+ jobLevel + "]";
 	}
+
+	
+	
 }
