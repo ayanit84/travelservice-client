@@ -2,7 +2,7 @@ package com.infosys.hackathon.services.directory.dto;
 
 public enum SearchParameter {
 	Country("country"), State("state"), City("city"), officeId("office"), EmpId(
-			"empid");
+			"empid") , JobLevel("jobLevel");
 
 	private String key;
 
