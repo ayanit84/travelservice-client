@@ -10,8 +10,8 @@ import com.infosys.hackathon.services.JsonData;
 public class ContactInformation implements JsonData {
 	
 	private String country;
-	private String countryHead;
-	private int BPHR;
+	private int countryHead;
+	private int bphr;
 	@JsonProperty("serviceDesk")
 	private Map<String, String> serviceDesk;
 	@JsonProperty("emergencyContacts")
@@ -42,20 +42,20 @@ public class ContactInformation implements JsonData {
 		this.country = country;
 	}
 
-	public String getCountryHead(){
+	public int getCountryHead(){
 		return countryHead;
 	}
 	
-	public void setCountryHead(String countryHead){
+	public void setCountryHead(int countryHead){
 		this.countryHead = countryHead;
 	}
 	
-	public int getBPHR(){
-		return BPHR;
+	public int getbphr(){
+		return bphr;
 	}
 	
-	public void setBPHR(int BPHR){
-		this.BPHR = BPHR;
+	public void setbphr(int bphr){
+		this.bphr = bphr;
 	}
 	
 	public Map<String, String> getServiceDesk() {
@@ -97,7 +97,7 @@ public class ContactInformation implements JsonData {
 	@Override
 	public String toString() {
 		return "ContactInformation [country=" + country + ", countryHead="
-				+ countryHead + ", BPHR=" + BPHR + ", serviceDesk="
+				+ countryHead + ", bphr=" + bphr + ", serviceDesk="
 				+ serviceDesk + ", emergencyContacts=" + emergencyContacts
 				+ ", incidentReporting=" + incidentReporting + "]";
 	}
