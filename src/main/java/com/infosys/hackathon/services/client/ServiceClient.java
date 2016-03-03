@@ -7,8 +7,8 @@ import com.infosys.hackathon.services.exceptions.TravelServiceException;
 public interface ServiceClient<T extends ServiceRequest, V extends ServiceResponse> {
 	public String getServiceName();
 
-	public V getRequest(Class<V> responseType) throws TravelServiceException;
+	public V getRequest(String handlerName, Class<V> responseType) throws TravelServiceException;
 
-	public V postRequest(T request, Class<V> responseType)
+	public V postRequest(String handlerName, T request, Class<V> responseType)
 			throws TravelServiceException;
 }
