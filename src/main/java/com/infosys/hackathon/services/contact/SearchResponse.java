@@ -1,19 +1,16 @@
 package com.infosys.hackathon.services.contact;
 
-import java.util.List;
-
 import com.infosys.hackathon.services.ServiceResponse;
-import com.infosys.hackathon.services.contact.ContactInformation;
 import com.infosys.hackathon.services.directory.EmployeeDirectoryInformation;
 
 public class SearchResponse extends ServiceResponse {
 	private ContactInformation country;
 	private EmployeeDirectoryInformation bphr;
 	private EmployeeDirectoryInformation countryHead;
-	
+
 	public SearchResponse() {
 	}
-	
+
 	public EmployeeDirectoryInformation getBphr() {
 		return bphr;
 	}
@@ -37,6 +34,5 @@ public class SearchResponse extends ServiceResponse {
 	public void setCountry(ContactInformation country) {
 		this.country = country;
 	}
-	
-	
+
 }
