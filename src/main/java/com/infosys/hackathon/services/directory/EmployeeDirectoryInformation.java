@@ -21,12 +21,16 @@ public class EmployeeDirectoryInformation implements JsonData {
 	private int officeId;
 	private String jobLevel;
 
+	// only for JSP
+	private String mobileNumber;
+	private String officeMail;
+
 	enum PhoneNumberType {
-		Home, Mobile, Office
+		home, mobile, office
 	}
 
 	enum EmailType {
-		Main, Client
+		main, client
 	}
 
 	public EmployeeDirectoryInformation() {
@@ -97,11 +101,11 @@ public class EmployeeDirectoryInformation implements JsonData {
 	}
 
 	public String getPhoneNumber(PhoneNumberType type) {
-		return this.phones.get(type);
+		return this.phones.get(type.name());
 	}
 
 	public String getEmail(EmailType type) {
-		return this.emails.get(type);
+		return this.emails.get(type.name());
 	}
 
 	public String getJobLevel() {
@@ -110,6 +114,24 @@ public class EmployeeDirectoryInformation implements JsonData {
 
 	public void setJobLevel(String jobLevel) {
 		this.jobLevel = jobLevel;
+	}
+
+	public String getMobileNumber() {
+		this.mobileNumber = getPhoneNumber(PhoneNumberType.mobile);
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getOfficeMail() {
+		this.officeMail = getEmail(EmailType.main);
+		return officeMail;
+	}
+
+	public void setOfficeMail(String officeMail) {
+		this.officeMail = officeMail;
 	}
 
 	@Override
@@ -121,6 +143,4 @@ public class EmployeeDirectoryInformation implements JsonData {
 				+ jobLevel + "]";
 	}
 
-	
-	
 }
