@@ -14,13 +14,14 @@ public class EmployeeOfficeAddress implements JsonData {
 	private String country;
 
 	@JsonProperty("zip")
-	private int pincode;
+	private String pincode;
 
 	public EmployeeOfficeAddress() {
 	}
-
-	public EmployeeOfficeAddress(int officeId, String addressLine, String city,
-			String state, String country, int pincode) {
+	
+	public EmployeeOfficeAddress(Integer officeId, String addressLine, String city, String state, String country,
+			String pincode) {
+		super();
 		this.officeId = officeId;
 		this.addressLine = addressLine;
 		this.city = city;
@@ -29,11 +30,13 @@ public class EmployeeOfficeAddress implements JsonData {
 		this.pincode = pincode;
 	}
 
+
+
 	public int getOfficeId() {
 		return officeId;
 	}
 
-	public void setOfficeId(int officeId) {
+	public void setOfficeId(Integer officeId) {
 		this.officeId = officeId;
 	}
 
@@ -69,18 +72,18 @@ public class EmployeeOfficeAddress implements JsonData {
 		this.country = country;
 	}
 
-	public int getPincode() {
+	public String getPincode() {
 		return pincode;
 	}
 
-	public void setPincode(int pincode) {
+	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
 
 	@Override
 	public String toString() {
-		return "EmployeeOfficeAddress [officeId=" + officeId + ", city=" + city
-				+ ", state=" + state + ", country=" + country + "]";
+		return "EmployeeOfficeAddress [officeId=" + officeId + ", addressLine=" + addressLine + ", city=" + city
+				+ ", state=" + state + ", country=" + country + ", pincode=" + pincode + "]";
 	}
 
 }
