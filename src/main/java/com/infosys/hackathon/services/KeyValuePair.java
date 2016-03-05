@@ -1,6 +1,8 @@
 package com.infosys.hackathon.services;
 
-public class KeyValuePair {
+import java.io.Serializable;
+
+public class KeyValuePair implements Serializable {
 
 	private String key;
 	private String value;
